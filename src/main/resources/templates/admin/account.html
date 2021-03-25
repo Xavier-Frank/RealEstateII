@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2 pt-3 pt-lg-none d-lg-none">
+                        <button class="btn btn-sm btn-light show-nav-btn fa fa-2x fa-bars"
+                            data-nav-class="navigation"></button>
+                    </div>
+                    <div class="col d-none d-lg-block pt-3">
+                        <h2>Residential Real Estate</h2>
+                    </div>
+                    <div class="col text-right">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img src="../images/member-1.jpg" class="rounded-circle" alt="" width="64" height="64" />
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                                    Actions
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Edit Account</a>
+                                    <a class="dropdown-item" href="#">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navigation -->
+        <div class="navigation">
+            <div class="close show-nav-btn fa fa-close position-absolute text-light d-lg-none"
+                data-nav-class="navigation"></div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="./dashboard.html">
+                        <i class="fa fa-tachometer"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="./properties.html">
+                        <i class="fa fa-database"></i>
+                        Properties
+                    </a>
+                </li>
+                <li>
+                    <a href="./add_property.html">
+                        <i class="fa fa-plus"></i>
+                        New Property
+                    </a>
+                </li>
+                <li>
+                    <a href="./deposits.html">
+                        <i class="fa fa-bank"></i>
+                        Deposits
+                        <span class="pull-right badge-pill badge-success">5</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./messages.html">
+                        <i class="fa fa-comment"></i>
+                        Messages
+                        <span class="pull-right badge-pill badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./account.html">
+                        <i class="fa fa-user"></i>
+                        Account
+                    </a>
+                </li>
+                <hr />
+                <li>
+                    <a href="./subscription.html">
+                        <i class="fa fa-user-plus"></i>
+                        Subscription
+                    </a>
+                </li>
+                <hr />
+                <li>
+                    <a href="./logout.html">
+                        <i class="fa fa-sign-out"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+            <div class="follow">
+                <h5 class="text-primary text-center">Follow Us</h5>
+                <div class="list-inline">
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-facebook"></i>
+                    </a>
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-twitter"></i>
+                    </a>
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- main content area -->
+        <div class="main-content">
+            <div class="title">
+                <h3 class="text-primary">Account</h3>
+            </div>
+            <div class="container account">
+                <div class="profile">
+                    <div class="image">
+                        <img src="../images/member-1.jpg" alt="" class="img-thumbnail p-2" />
+                    </div>
+                    <div class="profile-details text-center">
+                        <h4 class="text-primary">User name may be long</h4>
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item">
+                                <i class="fa fa-envelope text-muted"></i>
+                                <a href="mailto:#">username@example.com</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-phone text-muted"></i>
+                                <a href="tel:#">2547-123-12345</a>
+                            </li>
+                        </ul>
+                        <hr class="my-1" />
+                        <ul class="nav nav-tabs justify-content-between text-md-left flex-md-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#details">
+                                    <i class="fa fa-user-o"></i>
+                                    <p class="d-none d-md-inline-block">Details</p>
+                                    <span class="d-none d-md-block pull-right">
+                                        <i class="fa fa-angle-right "></i>
+                                    </span>
+
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#security">
+                                    <i class="fa fa-lock"></i>
+                                    <p class="d-none d-md-inline-block">Security</p>
+                                    <span class="d-none d-md-block pull-right">
+                                        <i class="fa fa-angle-right "></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#payment">
+                                    <i class="fa fa-bank"></i>
+                                    <p class="d-none d-md-inline-block">Payment</p>
+                                    <span class="d-none d-md-block pull-right">
+                                        <i class="fa fa-angle-right "></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#image">
+                                    <i class="fa fa-camera"></i>
+                                    <p class="d-none d-md-inline-block">Image</p>
+                                    <span class="d-none d-md-block pull-right">
+                                        <i class="fa fa-angle-right "></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content profile-data">
+
+                    <div class="tab-pane active" id="details">
+                        <h4 class="text-primary">
+                            Personal Details
+                        </h4>
+                        <form action="#" name="details-form" id="details-form">
+                            <div class="from-group mb-2">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" name="first_name" id="first_name"
+                                    placeholder="First Name" />
+                            </div>
+                            <div class="from-group mb-2">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" id="last_name"
+                                    placeholder="Last Name" />
+                            </div>
+                            <div class="from-group mb-2">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" id="phone"
+                                    placeholder="Phone Number" />
+                            </div>
+                            <div class="from-group mb-2">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" name="location" id="location"
+                                    placeholder="Location" />
+                            </div>
+                            <button class="btn btn-dark text-warning">Update Details</button>
+
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="security">
+                        <h4 class="text-primary">Security Details</h4>
+                        <form action="#" name="security-form" id="security-form">
+                            <div class="form-group mb-2">
+                                <label for="current_pass">Current Password</label>
+                                <input type="password" class="form-control" name="current_pass" id="current_pass"
+                                    placeholder="Current Password" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="password">New Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="New Password" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="password_2">Confirm Password</label>
+                                <input type="password_2" class="form-control" name="password_2" id="password_2"
+                                    placeholder="Confirm Password" />
+                            </div>
+                            <button class="btn btn-dark text-warning">Change Password</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="payment">
+                        <h4 class="text-primary">Payment Details</h4>
+                        <form action="#" name="payment-form" id="payment-form">
+                            <div class="form-group mb-2">
+                                <label for="till_no">Mpesa Till Number</label>
+                                <input type="number" class="form-control" name="till_no" id="till_no"
+                                    placeholder="Till Number" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="bus_name">Business Name</label>
+                                <input type="text" class="form-control" name="bus_name" id="bus_name"
+                                    placeholder="New Password" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="ac_name">Account Name</label>
+                                <input type="text" class="form-control" name="ac_name" id="ac_name"
+                                    placeholder="Account Name" />
+                            </div>
+                            <button class="btn btn-dark text-warning">Update Details</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="image">
+                        <h4 class="text-primary">Image</h4>
+                        <form action="" id="image-form" name="image-form">
+                            <p class="text-muted">Formats: JPEG, PNG, JPG, GIF</p>
+                            <p class="text-muted">Max Size: 2MB</p>
+                            <div class="display-image mb-2">
+                                <input type="file" name="display_image" id="display_image" class="d-none"
+                                    accept="*.png|*.jpeg|*.jpg|*.gif" data-preview-id="img-preview">
+                                <img src="" alt="" id="img-preview">
+                                <div class="file-upload-btn" data-upload-id="display_image">
+                                    <i class="fa fa-camera"></i>
+                                    Select Image
+                                </div>
+
+                            </div>
+                            <button class="btn btn-sm btn-primary">Upload</button>
+                            <button class="btn btn-sm btn-outline-danger">Remove</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="cta paging"></div>
+        </div>
+        <!-- footer  -->
+        <div class="footer d-flex justify-content-between px-3 align-items-center">
+            <p class="lead text-primary">Copyright &copy; 2021</p>
+            <a href="#">Contact Admin</a>
+        </div>
+    </div>
+
+    <script src="../assets/jquery/jquery.js"></script>
+    <script src="../assets/popper/popper.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

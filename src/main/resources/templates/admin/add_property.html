@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2 pt-3 pt-lg-none d-lg-none">
+                        <button class="btn btn-sm btn-light show-nav-btn fa fa-2x fa-bars" data-nav-class="navigation">
+                            
+                        </button>
+                    </div>
+                    <div class="col d-none d-lg-block pt-3">
+                        <h2>Residential Real Estate</h2>
+                    </div>
+                    <div class="col text-right">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img src="../images/member-1.jpg" class="rounded-circle" alt="" width="64" height="64">
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                                    Actions
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Edit Account</a>
+                                    <a class="dropdown-item" href="#">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navigation -->
+        <div class="navigation">
+            <div class="close show-nav-btn fa fa-close position-absolute text-light d-lg-none" data-nav-class="navigation"></div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="./dashboard.html">
+                        <i class="fa fa-tachometer"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="./properties.html">
+                        <i class="fa fa-database"></i>
+                        Properties
+                    </a>
+                </li>
+                <li>
+                    <a href="./add_property.html">
+                        <i class="fa fa-plus"></i>
+                        New Property
+                    </a>
+                </li>
+                <li>
+                    <a href="./deposits.html">
+                        <i class="fa fa-bank"></i>
+                        Deposits
+                        <span class="pull-right badge-pill badge-success">5</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./messages.html">
+                        <i class="fa fa-comment"></i>
+                        Messages
+                        <span class="pull-right badge-pill badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./account.html">
+                        <i class="fa fa-user"></i>
+                        Account
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="./subscription.html">
+                        <i class="fa fa-user-plus"></i>
+                        Subscription
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="./logout.html">
+                        <i class="fa fa-sign-out"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+            <div class="follow">
+                <h5 class="text-primary text-center">Follow Us</h5>
+                <div class="list-inline">
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-facebook"></i>
+                    </a>
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-twitter"></i>
+                    </a>
+                    <a class="list-inline-item" href="#">
+                        <i class="fa fa-2x fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- main content area -->
+        <div class="main-content">
+            <div class="title">
+                <h3 class="text-primary">Add New Property</h3>
+            </div>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card bg-transparent border-0 h-100 p-0">
+                            <div class="card-body p-0">
+                                <form action="#" id="property-form" name="property-form">
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-1">
+                                            <div class="basic-details h-100">
+                                                <h4 class="title text-primary">
+                                                Basic Details
+                                                </h4>
+                                                <div class="form-group">
+                                                    <label for="name">Property Name</label>
+                                                    <input type="text" class="form-control " id="name" name="name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="desc">Property Description</label>
+                                                    <textarea class="form-control " id="desc" name="desc" rows="5"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="type">Property Type</label>
+                                                    <select class="form-control " id="type" name="type">
+                                                        <option value="#" disabled class="text-muted">Select Type</option>
+                                                        <option value="1">Single Room</option>
+                                                        <option value="1">Single Room</option>
+                                                        <option value="1">Single Room</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="capacity_unit">Capacity Unit</label>
+                                                    <select class="form-control " id="type" name="type">
+                                                        <option value="#" disabled class="text-muted">Select Capacity Unit</option>
+                                                        <option value="1">Rooms</option>
+                                                        <option value="1">Occupants</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="capacity">Capacity</label>
+                                                    <input type="text" class="form-control " id="capacity" name="capacity">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-md-6 mb-1">
+                                            <div class="other-details mb-1">
+                                                <h4 class="title text-primary">
+                                                    Stock , Location and Deposit Amount
+                                                </h4>
+                                                <div class="form-group">
+                                                    <label for="stock">Stock or Slots available</label>
+                                                    <input type="number" class="form-control " id="stock" name="stock" min="1" value="1">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="location">Property Location</label>
+                                                    <select class="form-control " id="location" name="location">
+                                                        <option value="#" disabled class="text-muted">Select Location</option>
+                                                        <option value="1">Njoks</option>
+                                                        <option value="1">Gates</option>
+                                                        <option value="1">Right</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="deposit">Deposit</label>
+                                                    <input type="number" class="form-control " id="deposit" name="deposit" min="1" value="1">
+                                                </div>
+                                            </div>
+                                            <div class="other-details">
+                                                <h4 class="title text-primary">
+                                                    Display Image
+                                                    <small class="text-muted font-italic">
+                                                        (select 1 featured image)
+                                                    </small>
+                                                </h4>
+                                                <p class="text-muted">Formats: JPEG, PNG, JPG, GIF</p>
+                                                <p class="text-muted">Max Size: 2MB</p>
+                                                <div class="display-image">
+                                                    <input type="file" name="display_image" id="display_image" class="d-none" accept="*.png|*.jpeg|*.jpg|*.gif" data-preview-id="img-preview">
+                                                    <img src="" alt="" id="img-preview">
+                                                    <div class="file-upload-btn" data-upload-id="display_image">
+                                                        <i class="fa fa-camera"></i>
+                                                        Upload Image
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-1">
+                                            <div class="other-details">
+                                                <h4 class="title text-primary d-inline">
+                                                    Other Images 
+                                                    <small class="text-muted font-italic">
+                                                        (select 4 images)
+                                                    </small>
+                                                </h4>
+                                                <button class="btn btn-sm btn-outline-warning d-inline file-upload-btn" data-upload-id="display_images">Upload</button>
+                                                <input type="file" name="display_images" id="display_images" class="d-none" accept="image/*" multiple max="4" data-preview-class="img-preview">
+                                                <div class="display-images my-1 py-2">
+                                                    <div class="image d-inline">
+                                                        <img src="" alt="" class="img-thumbnail img-preview" width="90px" height="90px">
+                                                        <span class=" remove-img">
+                                                            &times;
+                                                        </span>
+                                                    </div>
+                                                    <div class="image d-inline">
+                                                        <img src="" alt="" class="img-thumbnail img-preview" width="90px" height="90px">
+                                                        <span class=" remove-img">
+                                                            &times;
+                                                        </span>
+                                                    </div>
+                                                    <div class="image d-inline">
+                                                        <img src="" alt="" class="img-thumbnail img-preview" width="90px" height="90px">
+                                                        <span class=" remove-img">
+                                                            &times;
+                                                        </span>
+                                                    </div>
+                                                    <div class="image d-inline">
+                                                        <img src="" alt="" class="img-thumbnail img-preview" width="90px" height="90px">
+                                                        <span class=" remove-img">
+                                                            &times;
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-sm btn-secondary px-2"> Preview </button>
+                                            <button class="btn btn-sm btn-primary px-2">Publish</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer  -->
+        <div class="footer d-flex justify-content-between px-3 align-items-center">
+            <p class="lead text-primary">Copyright &copy; 2021</p>
+            <a href="#">Contact Admin</a>
+        </div>
+    </div>
+
+    <script src="../assets/jquery/jquery.js"></script>
+    <script src="../assets/popper/popper.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
