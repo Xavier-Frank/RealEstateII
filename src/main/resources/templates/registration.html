@@ -1,74 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Registration Form</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/iconic/css/material-design-iconic-font.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="../static/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/css-hamburgers/hamburgers.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/animsition/css/animsition.min.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/select2/select2.min.css}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="../static/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/daterangepicker/daterangepicker.css}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/css/util.css">
-	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+<!--	=============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/util.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 <!--===============================================================================================-->
 </head>
 
 <body>
-	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('../static/images/bg-01.jpg');">
+<!--		For sending alerts about the errors on the forms-->
+		<div class="row text-center">
+			<div class="col-md-12">
+				<div th:if="${param.error}">
+					<div class="alert alert-warning">Email account is already taken</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="#" method="POST">
+				<form class="login100-form validate-form" action="#" th:action="@{/registration_process}" th:object="${user}" method="POST">
 
 					<span class="login100-form-logo">
 						<i class="fa fa-home"></i>
 					</span>
 
-					<span class="login100-form-title p-b-34 p-t-27">
-						Create An Account <i class="fa fa-fa-laugh"></i>
+					<span class="login100-form-title p-b-34 p-t-25">
+						Create An Account
 					</span>
-
 					<div class="wrap-input100 validate-input" data-validate = "Enter First Name">
-						<input class="input100" type="text" name="firstname" placeholder="First Name">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter Last Name">
-						<input class="input100" type="text" name="lastname" placeholder="Last Name">
+						<input class="input100" type="text" th:field="*{firstname}" placeholder="First Name" maxlength="20" minlength="3">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
-
-
+					<div class="wrap-input100 validate-input" data-validate = "Enter Last Name">
+						<input class="input100" type="text" th:field="*{lastname}" name="lastname" placeholder="Last Name" minlength="3" maxlength="20">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
 					<div class="wrap-input100 validate-input" data-validate="Enter email">
-						<input class="input100" type="email" name="email" placeholder="Email">
+						<input class="input100" type="email" th:field="*{email}" name="email" placeholder="Email">
 						<span class="focus-input100" data-placeholder="&#x2709;"></span>
 					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Phone number required">
-						<input class="input100" type="text" name="phonenumber" placeholder="Phone number">
+					<div class="wrap-input100 validate-input" data-validate="Enter phone number">
+						<input class="input100" type="text" th:field="*{phonenumber}" name="phonenumber" minlength="10" maxlength="13" placeholder="Phone number">
 						<span class="focus-input100" data-placeholder="&#x2706;"></span>
 					</div>
 
+<!--					<div class="wrap-input100 validate-input" data-validate = "Phone number required">-->
+<!--						<input class="input100" type="text" name="phonenumber" pattern="\d*" placeholder="Phone">-->
+<!--						<span class="focus-input100" data-placeholder="&#x2706;"></span>-->
+<!--					</div>-->
+
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" th:field="*{password}" id="password" name="pass" placeholder="Password" maxlength="10" minlength="10">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
                     </div>
                     
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass_2" placeholder="Retype Password">
+                    <div class="wrap-input100 validate-input" data-validate="Retype password">
+						<input class="input100" type="password" id="confirm_password" name="pass_2" placeholder="Retype Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					<div class="container-login100-form-btn">
@@ -77,15 +85,16 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-30">
+					<div class="text-center p-t-25">
                         <a class="txt1">
                             Already have an Account?
                         </a>
-						<a class="txt1 login-links" href="loginform.html">
+						<a class="txt1 login-links" href="/login">
 							<i class="fa fa-hand-o-right"></i> Login
 						</a>
 					</div>
 				</form>
+				<div class="alert alert-info" style="display: none;"></div>
 			</div>
 		</div>
 	</div>
@@ -94,21 +103,22 @@
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
-	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/animsition/js/animsition.min.js"></script>
+	<script th:src="@{/vendor/animsition/js/animsition.min.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/bootstrap/js/popper.js"></script>
-	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/select2/select2.min.js"></script>
+	<script th:src="@{/vendor/select2/select2.min.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/daterangepicker/moment.min.js"></script>
-	<script src="../static/vendor/daterangepicker/daterangepicker.js"></script>
+	<script th:src="@{/vendor/daterangepicker/moment.min.js}"></script>
+	<script th:src="@{/vendor/daterangepicker/daterangepicker.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/countdowntime/countdowntime.js"></script>
+	<script th:src="@{/vendor/countdowntime/countdowntime.js}"></script>
 <!--===============================================================================================-->
-	<script src="../static/js/main.js"></script>
+	<script th:src="@{/js/main.js}"></script>
+<!--=================================================================================================-->
 
 </body>
 </html>

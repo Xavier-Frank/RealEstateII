@@ -9,5 +9,5 @@ public class RealestatesIiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RealestatesIiApplication.class, args);
 	}
-
+// 192.168.43.202:8080
 }

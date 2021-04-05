@@ -45,6 +45,9 @@ body{
     height: auto;
     max-height: 250px;
 }
+.container{
+    padding:3px;
+}
 
 .main-title{
     font-size: 2rem;

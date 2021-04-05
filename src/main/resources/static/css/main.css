@@ -170,6 +170,7 @@ iframe {
   margin: 0 auto;
 }
 
+
 .container-login100 {
   width: 100%;
   min-height: 100vh;
@@ -495,6 +496,9 @@ iframe {
 
 .validate-input {
   position: relative;
+}
+.alert{
+    margin: auto;
 }
 
 .alert-validate::before {
