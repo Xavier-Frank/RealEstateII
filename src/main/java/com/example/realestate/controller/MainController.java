@@ -29,6 +29,8 @@ public class MainController {
     }
     @PostMapping("/registration_process")
     public String registerUser(User1 user1){
+
+
         BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user1.getPassword());
         user1.setPassword(encodedPassword);
