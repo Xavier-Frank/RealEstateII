@@ -44,4 +44,16 @@ public class MainController {
     public String logout(){
         return "redirect:/index?logout";
     }
+
+    //forgot password page
+    @GetMapping("/forgotPassword")
+    public String forgotPassword(){
+        return "forgotPassword";
+    }
+
+    //reset password page
+    @GetMapping("/resetPassword")
+    public String resetPassword(){
+        return "resetPassword";
+    }
 }
