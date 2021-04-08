@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import javax.sql.DataSource;
@@ -38,6 +39,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         return authenticationProvider;
     }
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
+        db.setDataSource(dataSource);
+        return db;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -51,6 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers().authenticated()
                 .anyRequest().permitAll()
                 .and()
+                .rememberMe().tokenRepository(persistentTokenRepository())
+                .and()
                 .formLogin()
                 .loginPage("/login")
                 .usernameParameter("email")
@@ -59,12 +68,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
+                .deleteCookies()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/index")
-                .permitAll()
-                .and()
-                .rememberMe();
-
+                .permitAll();
     }
 
 }
