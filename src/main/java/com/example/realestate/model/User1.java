@@ -3,6 +3,7 @@ package com.example.realestate.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.math.BigInteger;
+import java.sql.Date;
 
 @Entity
 @Table(name = "user1")
@@ -24,23 +25,38 @@ public class User1 {
     @NotEmpty
     @Column(length = 13)
     private String phonenumber;
-
-
     //problem
+    @NotEmpty
     @Column(nullable =  false, columnDefinition = "varchar(750)")
     private String password;
+    @Column(name = "enabled")
+    private boolean enabled;
+    @Column(name = "created_on")
+    private Date createdOn;
+    @Column(name = "last_login")
+    private Date lastLogin;
+    @Column(name = "reset_token")
+    private String resetToken;
 
-    public User1(Long id, String email, String firstname, String lastname, String phonenumber, String password) {
+    //constructor
+
+    public User1(Long id, @NotEmpty String email, @NotEmpty String firstname, @NotEmpty String lastname, @NotEmpty String phonenumber, @NotEmpty String password, boolean enabled, Date createdOn, Date lastLogin, String resetToken) {
         this.id = id;
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phonenumber = phonenumber;
         this.password = password;
+        this.enabled = enabled;
+        this.createdOn = createdOn;
+        this.lastLogin = lastLogin;
+        this.resetToken = resetToken;
     }
 
     public User1() {
     }
+
+    //getters and setters
 
     public Long getId() {
         return id;
@@ -88,6 +104,38 @@ public class User1 {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public Date getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
     }
 }
 

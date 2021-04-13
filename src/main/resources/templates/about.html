@@ -22,6 +22,11 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" th:href="@{/vendor/daterangepicker/daterangepicker.css}">
     <!--===============================================================================================-->
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" th:href="@{/assets/font-awesome/css/font-awesome.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <!--	=============================================================================================-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/util.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
@@ -35,7 +40,7 @@
             <nav class="navbar navbar-expand-sm bg-warning navbar-light">
                 <div class="container">
                     <!-- Brand -->
-                    <a class="navbar-brand d-sm-none" href="./index.html">Logo</a>
+                    <a class="navbar-brand d-sm-none" href="/index">Logo</a>
                     <!-- Toggler/collapsibe Button -->
                     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar">
                         <span class="navbar-toggler-icon"></span>
@@ -44,15 +49,15 @@
                         <!-- Links -->
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="./index.html">Home</a>
+                                <a class="nav-link" href="/index">Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="./about.html">About</a>
+                                <a class="nav-link" href="/about">About</a>
                             </li>
 
                             <!-- Dropdown -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle" href="/properties" id="navbardrop" data-toggle="dropdown">
                                     Properties
                                 </a>
                                 <div class="dropdown-menu">
@@ -62,7 +67,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./contact.html">Contact Us</a>
+                                <a class="nav-link" href="/contact">Contact Us</a>
                             </li>
 
                         </ul>

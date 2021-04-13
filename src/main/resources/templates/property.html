@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="../static/assets/font-awesome/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/alert.js}"></script>
     <title>Resisdential Real Estate</title>
   </head>
 
@@ -287,7 +285,8 @@
       </div>
     </footer>
   </body>
-  <script src="../static/assets/jquery/jquery.js"></script>
-  <script src="../static/assets/popper/popper.js"></script>
-  <script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script th:src="@{/assets/jquery/jquery.js}"></script>
+  <script th:src="@{/assets/popper/popper.js}"></script>
+  <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/script.js"></script>
 </html>

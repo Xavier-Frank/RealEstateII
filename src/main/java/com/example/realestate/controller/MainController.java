@@ -45,15 +45,17 @@ public class MainController {
         return "redirect:/index?logout";
     }
 
-    //forgot password page
-    @GetMapping("/forgotPassword")
-    public String forgotPassword(){
-        return "forgotPassword";
+    @GetMapping("/about")
+    public String displayAboutPage(){
+        return "about";
+    }
+    @GetMapping("/properties")
+    public String displayPropetiesPage(){
+        return "properties";
+    }
+    @GetMapping("/contact")
+    public String displayContactPage(){
+        return "contact";
     }
 
-    //reset password page
-    @GetMapping("/resetPassword")
-    public String resetPassword(){
-        return "resetPassword";
-    }
 }
