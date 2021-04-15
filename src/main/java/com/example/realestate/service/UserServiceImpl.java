@@ -1,6 +1,7 @@
 package com.example.realestate.service;
 
 import com.example.realestate.dao.UserRepository1;
+import com.example.realestate.dao.UserService;
 import com.example.realestate.model.User1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

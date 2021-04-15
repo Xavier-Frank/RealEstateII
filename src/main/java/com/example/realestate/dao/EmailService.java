@@ -1,4 +1,4 @@
-package com.example.realestate.service;
+package com.example.realestate.dao;
 
 import org.springframework.mail.SimpleMailMessage;
 

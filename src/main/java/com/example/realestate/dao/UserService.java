@@ -1,4 +1,4 @@
-package com.example.realestate.service;
+package com.example.realestate.dao;
 
 import com.example.realestate.model.User1;
 
