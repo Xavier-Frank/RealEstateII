@@ -1,9 +1,9 @@
 package com.example.realestate.controller;
 
-import com.example.realestate.dao.UserRepository1;
-import com.example.realestate.model.User1;
+import com.example.realestate.dao.TenantService;
+import com.example.realestate.dao.TenantsRepository;
+import com.example.realestate.model.Tenants;
 import com.example.realestate.service.EmailServiceImpl;
-import com.example.realestate.dao.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,9 +24,9 @@ import java.util.UUID;
 @Controller
 public class PasswordController {
     @Autowired
-    private UserService userService;
+    private TenantService tenantService;
     @Autowired
-    private UserRepository1 userRepository1;
+    private TenantsRepository tenantsRepository;
     @Autowired
     private EmailServiceImpl emailService;
     @Autowired
@@ -44,24 +44,24 @@ public class PasswordController {
     public ModelAndView processForgotPasswordPage(ModelAndView modelAndView, @RequestParam("email") String userEmail,
                                                   HttpServletRequest request){
         //fetch user in db by email
-        Optional<User1> optional = Optional.ofNullable(userRepository1.findByEmail(userEmail));
+        Optional<Tenants> optional = Optional.ofNullable(tenantsRepository.findByEmail(userEmail));
 
         if (optional.isPresent()){
             //generate token for reset password
-            User1 user1 = optional.get();
-            user1.setResetToken(UUID.randomUUID().toString());
+            Tenants tenants = optional.get();
+            tenants.setResetToken(UUID.randomUUID().toString());
 
             //save the token in db
-            userService.saveUser(user1);
+            tenantService.saveUser(tenants);
 
             String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
 
             //Create the message
             SimpleMailMessage passwordResetEmail = new SimpleMailMessage();
             passwordResetEmail.setFrom("supportcenter@gmail.com");
-            passwordResetEmail.setTo(user1.getEmail());
+            passwordResetEmail.setTo(tenants.getEmail());
             passwordResetEmail.setSubject("Complete your Real Estate website request");
-            passwordResetEmail.setText("Click the link to complete your password reset: " + "" + url + "/resetPasswordPage?token=" + user1.getResetToken());
+            passwordResetEmail.setText("Click the link to complete your password reset: " + "" + url + "/resetPasswordPage?token=" + tenants.getResetToken());
 
             //send the email
             emailService.sendEmail(passwordResetEmail);
@@ -80,7 +80,7 @@ public class PasswordController {
     //display reset password page
     @GetMapping("/resetPasswordPage")
     public ModelAndView displayResetPasswordPage(ModelAndView modelAndView, @RequestParam("token") String token){
-        Optional<User1> user1 = userService.findUserByResetToken(token);
+        Optional<Tenants> user1 = tenantService.findUserByResetToken(token);
 
         if (user1.isPresent()){
             modelAndView.addObject("resetToken", token);
@@ -98,10 +98,10 @@ public class PasswordController {
                                        RedirectAttributes attributes){
 
         //find user linked to the token
-        Optional<User1> user1 = userService.findUserByResetToken(requestParams.get("token"));
+        Optional<Tenants> user1 = tenantService.findUserByResetToken(requestParams.get("token"));
 
         if (user1.isPresent()){
-            User1 resetUser = user1.get();
+            Tenants resetUser = user1.get();
 
             //set new password
             resetUser.setPassword(bCryptPasswordEncoder.encode(requestParams.get("password")));
@@ -110,7 +110,7 @@ public class PasswordController {
             resetUser.setResetToken(null);
 
             //saving the user
-            userService.saveUser(resetUser);
+            tenantService.saveUser(resetUser);
 
             //redireccting attributes
             attributes.addFlashAttribute("successMessage", "Successfully reset your password");

@@ -1,6 +1,6 @@
 package com.example.realestate.service;
 
-import com.example.realestate.model.User1;
+import com.example.realestate.model.Tenants;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,10 +8,10 @@ import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
 
-    private User1 user1;
+    private Tenants tenants;
 
-    public CustomUserDetails(User1 user1){
-        this.user1=user1;
+    public CustomUserDetails(Tenants tenants){
+        this.tenants = tenants;
     }
 
 
@@ -22,13 +22,13 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user1.getPassword();
+        return tenants.getPassword();
     }
 
     @Override
     public String getUsername() {
 
-        return user1.getEmail();
+        return tenants.getEmail();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class CustomUserDetails implements UserDetails {
         return true;
     }
     public String getFullName(){
-        return user1.getEmail();
+        return tenants.getEmail();
 
     }
 }
